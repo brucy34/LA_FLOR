@@ -25,12 +25,13 @@ print(len(kod2))
 
 # 5.-jenere yon SLUG 
 
-alfa3="yon chenn pou fe slug"
-
-def aleyatwa(alfa):
-    return "".join(random.sample(alfa,nomb))
-
-
-kod2=aleyatwa(alfa2,36)
-print(kod2)
-print(len(kod2))
+alfa3="yon chenn pou fé\slug"
+def slug(alfa: str):
+    ch=""
+    for i in range(len(alfa)):
+        if alfa[i].isalnum() == False:
+            ch += "-"
+        elif alfa[i].isalnum() == True:
+            ch += alfa[i] 
+    return ch
+print(slug(alfa3))
