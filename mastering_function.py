@@ -1,5 +1,6 @@
 import random
 from text_unidecode import unidecode
+from slugify import slugify
 
 # 3.-kod  aleyatwa alfabetik san repetisyon
 alfa1="abcdefghijklmnopqrstuvwxyz"
@@ -27,16 +28,17 @@ print(len(kod2))
 
 # 5.-jenere yon SLUG 
 
-alfa3="yon c'henn pou fé\slug"
-def slug(alfa: str):
-    uni=unidecode(alfa)
-    ch=""
-    for i in range(len(uni)):
-        if uni[i] == "\'" :
-            ch += ""
-        elif uni[i].isalnum() == False:
-            ch += "-"
-        elif uni[i].isalnum() == True:
-            ch += uni[i]
-    return ch
+alfa3="yon --c'henn pou fé\\slug"
+
+def slug(alfa):
+    return slugify(alfa)
+
 print(slug(alfa3))
+
+# 6.- separe chak let pa yon vigil
+mesaj1="metevigigilyoaprelet"
+
+def met_vigil(mesaj):
+    return ",".join([elt for elt in mesaj])
+
+print(met_vigil(mesaj1))
